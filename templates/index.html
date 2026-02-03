@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Farm Store</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Farm Store</h1>
+    <a href="{{ url_for('cart') }}" class="cart-link">🛒 Cart</a>
+  </header>
+
+  <main class="product-grid">
+    {% set products = [
+      ("barley.jpg", "Barley", 90),
+      ("corn.jpg", "Corn", 80),
+      ("mustard.jpg", "Mustard", 100),
+      ("millet.jpg", "Millet", 85),
+      ("sunflower.jpg", "Sunflower", 120),
+      ("groundnut.jpeg", "Groundnut", 95),
+      ("cia.jpg", "CIA Product", 110)
+    ] %}
+    {% for img, name, price in products %}
+    <div class="product">
+      <img src="{{ url_for('static', filename='images/' + img) }}" alt="{{ name }}">
+      <h3>{{ name }}</h3>
+      <p>₹{{ price }}/kg</p>
+      <button onclick="addToCart('{{ name }}', '{{ price }}')">Add to Cart</button>
+    </div>
+    {% endfor %}
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

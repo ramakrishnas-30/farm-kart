@@ -1,0 +1,68 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #eef2f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.error-msg {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 30px;
+  }
+  input {
+    padding: 10px;
+    font-size: 14px;
+  }
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
